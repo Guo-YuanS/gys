@@ -25,12 +25,12 @@ import java.util.List;
 public class ReadJson {
 	public List<ArrayObject> read(String path) {
 		List<ArrayObject> objects = new ArrayList<>();
-		JsonParser parse =new JsonParser();  //´´½¨JSON½âÎöÆ÷
+		JsonParser parse =new JsonParser();  //åˆ›å»ºJSONè§£æå™¨
 		try {
-            JsonObject json=(JsonObject) parse.parse(new FileReader(path));  //´´½¨jsonObject¶ÔÏó
-            JsonArray array = json.get("Oberon").getAsJsonArray(); //»ñÈ¡JSONÊı×é
+            JsonObject json=(JsonObject) parse.parse(new FileReader(path));  //åˆ›å»ºjsonObjectå¯¹è±¡
+            JsonArray array = json.get("Oberon").getAsJsonArray(); //è·å–JSONæ•°ç»„
             for(int i=0;i<array.size();i++) {
-            	ArrayObject obj = new ArrayObject();//´´½¨¶ÔÏó
+            	ArrayObject obj = new ArrayObject();//åˆ›å»ºå¯¹è±¡
             	JsonObject subobject = array.get(i).getAsJsonObject();
             	obj.setNAME(subobject.get("NAME").getAsString());
                 obj.setSPA_IP(subobject.get("SPA_IP").getAsString());
@@ -52,7 +52,7 @@ public class ReadJson {
 		return objects;
 	}
 	
-	public String ReadFile(String path) {
+	/*public String ReadFile(String path) {
 		BufferedReader reader = null;
 		String lastStr = "";
 		try {
@@ -76,6 +76,6 @@ public class ReadJson {
 			}
 		}
 		return lastStr;
-	}
+	}*/
 }
 
