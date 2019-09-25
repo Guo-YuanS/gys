@@ -9,11 +9,6 @@ public class Main {
 		WriteToSql writeToSql = new WriteToSql();
 		writeToSql.sqlCon();
 		List<ArrayObject> Oberon = readJson.read("C:\\Users\\gys\\Desktop\\test.json");
-		for(int i=0;i<Oberon.size();i++) {
-			System.out.println(Oberon.get(i).getNAME());
-			System.out.println(Oberon.get(i).getSPA_IP());
-			System.out.println(Oberon.get(i).getSPB_IP());
-		}
 		writeToSql.saveSql(Oberon);
 	}
 }
